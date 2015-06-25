@@ -1,0 +1,35 @@
+<div class="header-bar">
+  <a href="" class="back-button"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span></a>
+  <p class="title_page"></p>
+  <button type="button" class="btn" id="menu-toggle"></button>
+</div>
+
+<!-- Sidebar -->
+<div id="sidebar-wrapper">
+    <ul class="sidebar-nav">
+        <li><a href="#/app/about_us" class="close-menu">About Us</a></li>
+        <li><a href="#/app/apartment" class="close-menu">Apartment List</a></li>
+        <li><a href="#/app/class" class="close-menu">Class</a></li>
+        <li><a href="#/app/events" class="close-menu">Upcommig Events</a></li>
+    </ul>
+</div>
+
+<div id="page-content-wrapper">
+  <ion-nav-view name="page_content"></ion-nav-view>
+</div>
+
+<script type="text/javascript">
+$(document).ready(function(){
+  $("#menu-toggle").click(function(e) {
+      e.preventDefault();
+      $("#wrapper").toggleClass("toggled");
+  });
+  /*$("#page-content-wrapper").click(function(e) {
+      e.preventDefault();
+      $("#wrapper").removeClass("toggled");
+  });*/
+  $('.close-menu').click(function(e) {
+      $("#wrapper").removeClass("toggled");
+  });
+})
+</script>

@@ -1,0 +1,53 @@
+<ion-content>
+	<div class="swiper-container" style="height:250px">
+	    <div class="swiper-wrapper">
+			<div class="swiper-slide">
+	            <a href="#/app/apart_features/1"><img src="http://agungsedayuproject.com/asset/images/fasilitas/fasilitas-8.jpg" alt="Apartment" style="width:100%; height:100%;"></a>
+	        </div>
+	        <div class="swiper-slide">
+	            <a href="#/app/apart_features/1"><img src="http://agungsedayuproject.com/asset/images/fasilitas/fasilitas-2.jpg" alt="Apartment" style="width:100%; height:100%;"></a>
+	        </div>
+	        <div class="swiper-slide">
+	            <a href="#/app/apart_features/1"><img src="http://agungsedayuproject.com/asset/images/fasilitas/fasilitas-3.jpg" alt="Apartment" style="width:100%; height:100%;"></a>
+	        </div>
+	        <div class="swiper-slide">
+	            <a href="#/app/apart_features/1"><img src="http://agungsedayuproject.com/asset/images/fasilitas/fasilitas-4.jpg" alt="Apartment" style="width:100%; height:100%;"></a>
+	        </div>
+	        <div class="swiper-slide">
+	            <a href="#/app/apart_features/1"><img src="http://agungsedayuproject.com/asset/images/fasilitas/fasilitas-5.jpg" alt="Apartment" style="width:100%; height:100%;"></a>
+	        </div>
+		</div>
+
+	    <!-- Add Pagination -->
+	    <div class="swiper-pagination"></div>
+	    <!-- Add Arrows -->
+	    <div class="swiper-button-next"></div>
+	    <div class="swiper-button-prev"></div>
+	</div>
+
+	<div class="content details_apartment">
+		<div class="list-group">
+		  <a class="list-group-item" href="#/app/apartment_highlight/1">Highlight <span class=" glyphicon glyphicon-menu-right pull-right" aria-hidden="true"></span></a>
+		  <a class="list-group-item" href="#/app/apartment_gallery/1">Gallery <span class=" glyphicon glyphicon-menu-right pull-right" aria-hidden="true"></span></a>
+		  <a class="list-group-item">Another Info <span class="glyphicon glyphicon-menu-right pull-right" aria-hidden="true"></span></a>
+		  <a class="list-group-item">Less Available <span class="glyphicon glyphicon-menu-right pull-right" aria-hidden="true"></span></a>
+		  <a class="list-group-item">Notification <span class="glyphicon glyphicon-menu-right pull-right" aria-hidden="true"></span></a>
+		</div>
+	</div>
+</ion-content>
+
+
+<script>
+$(document).ready(function(){
+    var swiper = new Swiper('.swiper-container', {
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        pagination: '.swiper-pagination',
+        paginationClickable: true,
+        // Disable preloading of all images
+        preloadImages: false,
+        // Enable lazy loading
+        lazyLoading: true
+    });
+})
+</script>

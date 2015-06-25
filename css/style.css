@@ -1,0 +1,101 @@
+html, body {
+	margin:0px;
+	padding:0px;
+	width: 100%;
+	height: 100%;
+}
+body {
+	color: #333;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.42857;
+}
+.header-bar {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 45px;
+	line-height: 45px;
+	background: #549cff none repeat;
+	padding:0px 10px;
+	z-index: 9999;
+}
+.header-bar .back-button {
+	float: left;
+	margin-right: 10px;
+	display: none;
+}
+.header-bar .title_page {
+	font-size: 12px;
+	color: #ffffff;
+	font-weight: bold;
+	float: left;
+}
+.header-bar button, .header-bar button:active, .header-bar button:focus {
+	border-radius: 0px;
+	width: 35px;
+	height: 32px;
+	background: url('../img/menu.png');
+	background-size: 100% 100%;
+	float: right;
+	margin-top:7px; 
+}
+
+.content {
+	text-align: justify;
+	font-size: 12px;
+	padding: 20px 20px 50px;
+}
+
+.header-image {
+	width:100%;
+	max-height: 320px;
+}
+
+.list_apartment {}
+.list_apartment .item-apart {
+	height: 250px;
+	margin-bottom: 10px;
+	border-bottom:1px dotted #ccc;
+}
+.list_apartment .item-apart .background img {
+	width: 100%;
+	height: 200px;
+}
+.list_apartment .item-apart .description {
+	padding:10px 2px;
+	height: 25px;
+	line-height: 25px;
+}
+.list_apartment .item-apart .description span {
+	font-weight: bold;
+}
+
+.details_apartment {}
+
+.panel-title {font-size: 14px;}
+.panel-body {
+	padding:10px 5px;
+}
+
+.list-highlight {
+	border:none;
+	padding: 0px;
+}
+.list-highlight .list-group-item {
+	border-top:none;
+	border-left:none;
+	border-right:none;
+	border-bottom: 2px solid #ccc;
+}
+.list-highlight .list-group-item:last-child {
+	border:none;
+}
+
+.gallery {}
+.gallery img {
+	width: 100%;
+	height: 100%;
+	margin: 10px 0px;
+}
