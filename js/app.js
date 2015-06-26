@@ -1,6 +1,6 @@
 angular.module('starter', ['ionic','starter.controllers'])
 
-.run(function($ionicPlatform) {
+.run(function($ionicPlatform, $ionicPopup, $timeout) {
   $ionicPlatform.ready(function() {
     if(window.cordova && window.cordova.plugins.Keyboard) {
       cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
@@ -9,6 +9,18 @@ angular.module('starter', ['ionic','starter.controllers'])
       StatusBar.styleDefault();
     }
   });
+
+  $ionicPlatform.registerBackButtonAction(function () {
+    var confirmPopup = $ionicPopup.confirm({
+     title: 'Jakarta Balconies',
+     template: 'Are you sure you want to exit?'
+    });
+    confirmPopup.then(function(res) {
+     if(res) {
+      navigator.app.exitApp();
+     }
+    });
+  }, 100);
 })
 
 .config(function($stateProvider, $urlRouterProvider) {
