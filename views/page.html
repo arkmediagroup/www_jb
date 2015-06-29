@@ -11,6 +11,7 @@
         <li><a href="#/app/apartment" class="close-menu">Apartment List</a></li>
         <li><a href="#/app/class" class="close-menu">Class</a></li>
         <li><a href="#/app/events" class="close-menu">Upcommig Events</a></li>
+        <li><a href="javascript:;" class="close-menu fbLogin" ng-click="fbLogin()">Login Facebook</a></li>
     </ul>
 </div>
 
@@ -18,8 +19,18 @@
   <ion-nav-view name="page_content"></ion-nav-view>
 </div>
 
+<!--<textarea class="logging" style="position:absolute; bottom:0px; left:0px; z-index:9999;">test</textarea>-->
+
+
 <script type="text/javascript">
+$(window).load(function() {
+  // Animate loader off screen
+  $(".se-pre-con").fadeOut("slow");;
+});
+  
 $(document).ready(function(){
+  $('img').imgPreload();
+
   $("#menu-toggle").click(function(e) {
       e.preventDefault();
       $("#wrapper").toggleClass("toggled");

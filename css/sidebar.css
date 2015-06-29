@@ -69,6 +69,10 @@
     font-size: 12px;
 }
 
+.sidebar-nav li a.fbLogin, .sidebar-nav li a.fbLogin:hover, .sidebar-nav li a.fbLogin:active {
+    background: #549cff none repeat;
+}
+
 .sidebar-nav li a:hover {
     text-decoration: none;
     color: #000;

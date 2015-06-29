@@ -1,6 +1,7 @@
-angular.module('starter', ['ionic','starter.controllers'])
+angular.module('starter', ['ionic','starter.controllers','ionic.service.core', 'ionic.service.push','ngOpenFB'])
 
-.run(function($ionicPlatform, $ionicPopup, $timeout) {
+.run(function($ionicPlatform, $ionicPopup, $timeout, ngFB) {
+  ngFB.init({appId: '399023356964955'});
   $ionicPlatform.ready(function() {
     if(window.cordova && window.cordova.plugins.Keyboard) {
       cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
@@ -22,6 +23,18 @@ angular.module('starter', ['ionic','starter.controllers'])
     });
   }, 100);
 })
+
+.config(['$ionicAppProvider', function($ionicAppProvider) {
+  // Identify app
+  $ionicAppProvider.identify({
+    // The App ID for the server
+    app_id: 'ce564208',
+    // The API key all services will use for this app
+    api_key: 'AIzaSyC-4X-TOTtdNFy52CEYe-DytzWv7caEWlk',
+    // The GCM project number
+    gcm_id: '409426641173'
+  });
+}])
 
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
