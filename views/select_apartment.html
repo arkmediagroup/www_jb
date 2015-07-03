@@ -1,0 +1,9 @@
+  <ion-content>
+ 	<div class="list">
+	  <label class="item item-radio" ng-repeat="apart in apartlist" ng-click="select_apart(' {{ apart.id }} ')">
+	    <input type="radio" name="radio" value="{{ apart.apart_id }}" ng-model="radio">
+	    <div class="item-content item-select-apartment">{{ apart.apart_name }}</div>
+	    <i class="radio-icon ion-checkmark"></i>
+	  </label>
+	</div>
+  </ion-content>

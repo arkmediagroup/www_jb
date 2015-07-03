@@ -1,8 +1,4 @@
-  <ion-content>
- 	<img ng-src="https://thamrinresidence.files.wordpress.com/2008/09/thamrin-residence.jpg" class="header-image">
- 	<div class="content about">
-	 	<em>Jakarta Balconies, purposes to make you know your surrounding and as apartment guidance, which makes everything lot easier to find in a signle click. It is designed for everybody who lives in the apartment as an apartment community.<br/>
-	 	Enjoy and make yourself at home<br/><br/>
-	 	when you know well your surrounding it is a place you call 'HOME'</em>
- 	</div>
-  </ion-content>
+<ion-content>
+	<img ng-src="{{ path_upload + aboutus.aboutus_image }}" class="header-image">
+	<div class="content about" ng-bind-html="description"></div>
+</ion-content>

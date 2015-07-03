@@ -1,42 +1,10 @@
 <ion-content>
 	<div class="content list_apartment">
-		<div class="item-apart">
-			<div class="background"><img src="http://jakarta-apartmentforrent.com/wp-content/uploads/2013/12/Kota-Kasablanca-Jakarta-Apartment.jpg"></div>
+		<div class="item-apart" ng-repeat="row in apartlist">
+			<div class="background"><img src="{{ path_upload + row.apart_image_url }}"></div>
 			<div class="description">
-				<span class="name">Thamrin City</span>
-				<a href="#/app/apartment_details/1" class="btn btn-info btn-sm pull-right">Details</a>
-			</div>
-		</div>
-
-		<div class="item-apart">
-			<div class="background"><img src="http://investproperti.com/wp-content/uploads/2013/11/puri-mansion-apartment-jakarta-barat.jpg"></div>
-			<div class="description">
-				<span class="name">Thamrin City</span>
-				<a href="#/app/apartment_details/1" class="btn btn-info btn-sm pull-right">Details</a>
-			</div>
-		</div>
-
-		<div class="item-apart">
-			<div class="background"><img src="http://www.thepresidentpost.com/wp-content/uploads/2013/10/president-post-Apartments-in-Jakarta.jpg"></div>
-			<div class="description">
-				<span class="name">Thamrin City</span>
-				<a href="#/app/apartment_details/1" class="btn btn-info btn-sm pull-right">Details</a>
-			</div>
-		</div>
-
-		<div class="item-apart">
-			<div class="background"><img src="http://investproperti.com/wp-content/uploads/2013/11/puri-mansion-apartment-jakarta.jpg"></div>
-			<div class="description">
-				<span class="name">Thamrin City</span>
-				<a href="#/app/apartment_details/1" class="btn btn-info btn-sm pull-right">Details</a>
-			</div>
-		</div>
-
-		<div class="item-apart">
-			<div class="background"><img src="http://rumahdijual.org/athumb/5/d/1/big400621.jpg"></div>
-			<div class="description">
-				<span class="name">Thamrin City</span>
-				<a href="#/app/apartment_details/1" class="btn btn-info btn-sm pull-right">Details</a>
+				<span class="name">{{ row.apart_name }}</span>
+				<a href="#/app/apartment_details/{{ row.apart_id }}" class="btn btn-info btn-sm pull-right">Details</a>
 			</div>
 		</div>
 	</div>

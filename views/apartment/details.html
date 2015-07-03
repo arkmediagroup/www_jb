@@ -27,11 +27,11 @@
 
 	<div class="content details_apartment">
 		<div class="list-group">
-		  <a class="list-group-item" href="#/app/apartment_highlight/1">Highlight <span class=" glyphicon glyphicon-menu-right pull-right" aria-hidden="true"></span></a>
-		  <a class="list-group-item" href="#/app/apartment_gallery/1">Gallery <span class=" glyphicon glyphicon-menu-right pull-right" aria-hidden="true"></span></a>
-		  <a class="list-group-item">Another Info <span class="glyphicon glyphicon-menu-right pull-right" aria-hidden="true"></span></a>
-		  <a class="list-group-item">Less Available <span class="glyphicon glyphicon-menu-right pull-right" aria-hidden="true"></span></a>
-		  <a class="list-group-item">Notification <span class="glyphicon glyphicon-menu-right pull-right" aria-hidden="true"></span></a>
+		  <a class="list-group-item" href="#/app/apartment_highlight/{{ row.apart_id }}">Highlight <span class=" glyphicon glyphicon-menu-right pull-right" aria-hidden="true"></span></a>
+		  <a class="list-group-item" href="#/app/apartment_gallery/{{ row.apart_id }}">Gallery <span class=" glyphicon glyphicon-menu-right pull-right" aria-hidden="true"></span></a>
+		  <a class="list-group-item" href="#/app/apartment_info/{{ row.apart_id }}">Another Info <span class="glyphicon glyphicon-menu-right pull-right" aria-hidden="true"></span></a>
+		  <a class="list-group-item" href="#/app/apartment_available/{{ row.apart_id }}">Less Available <span class="glyphicon glyphicon-menu-right pull-right" aria-hidden="true"></span></a>
+		  <a class="list-group-item" href="#/app/apartment_news/{{ row.apart_id }}">News <span class="glyphicon glyphicon-menu-right pull-right" aria-hidden="true"></span></a>
 		</div>
 	</div>
 </ion-content>

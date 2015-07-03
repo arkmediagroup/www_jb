@@ -6,11 +6,7 @@
 			</div>
 			<div class="panel-body">
 				<div class="list-group list-highlight">
-				  <a class="list-group-item" href="#/app/apartment_highlight/1">Restaurant <span class=" glyphicon glyphicon-menu-right pull-right" aria-hidden="true"></span></a>
-				  <a class="list-group-item" href="#/app/apartment_highlight/1">Gallery <span class=" glyphicon glyphicon-menu-right pull-right" aria-hidden="true"></span></a>
-				  <a class="list-group-item" href="#/app/apartment_highlight/1">Another Info <span class="glyphicon glyphicon-menu-right pull-right" aria-hidden="true"></span></a>
-				  <a class="list-group-item" href="#/app/apartment_highlight/1">Less Available <span class="glyphicon glyphicon-menu-right pull-right" aria-hidden="true"></span></a>
-				  <a class="list-group-item" href="#/app/apartment_highlight/1">Notification <span class="glyphicon glyphicon-menu-right pull-right" aria-hidden="true"></span></a>
+				  <a class="list-group-item" ng-repeat="row1 in highlight.recommended_area">{{ row1.highlight_name }}</a>
 				</div>
 			</div>
 		</div>
@@ -21,11 +17,7 @@
 			</div>
 			<div class="panel-body">
 				<div class="list-group list-highlight">
-				  <a class="list-group-item" href="#/app/apartment_highlight/1">Restaurant <span class=" glyphicon glyphicon-menu-right pull-right" aria-hidden="true"></span></a>
-				  <a class="list-group-item" href="#/app/apartment_highlight/1">Gallery <span class=" glyphicon glyphicon-menu-right pull-right" aria-hidden="true"></span></a>
-				  <a class="list-group-item" href="#/app/apartment_highlight/1">Another Info <span class="glyphicon glyphicon-menu-right pull-right" aria-hidden="true"></span></a>
-				  <a class="list-group-item" href="#/app/apartment_highlight/1">Less Available <span class="glyphicon glyphicon-menu-right pull-right" aria-hidden="true"></span></a>
-				  <a class="list-group-item" href="#/app/apartment_highlight/1">Notification <span class="glyphicon glyphicon-menu-right pull-right" aria-hidden="true"></span></a>
+				  <a class="list-group-item" ng-repeat="row2 in highlight.attraction">{{ row2.highlight_name }}</a>
 				</div>
 			</div>
 		</div>

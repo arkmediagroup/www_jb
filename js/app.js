@@ -58,6 +58,17 @@ angular.module('starter', ['ionic','starter.controllers','ionic.service.core', '
     }
   })
 
+  .state('app.select_apartment', {
+    cache: false,
+    url: "/select_apartment",
+    views: {
+      'page_content': {
+        templateUrl: "views/select_apartment.html",
+        controller: 'select_apartment_ctrl'
+      }
+    }
+  })
+
   //Apartment =>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
   .state('app.apartment', {
