@@ -1,21 +1,12 @@
 <ion-content>
 	<div class="swiper-container" style="height:250px">
+		<div class="overlay-gallery" style="height:250px; line-height:250px; background-color:#f9f9f9; text-align:center; font-family:Calibri; font-size:12px; font-weight:bold;">
+			Loading...
+		</div>
 	    <div class="swiper-wrapper">
-			<div class="swiper-slide">
-	            <a href="#/app/apart_features/1"><img src="http://agungsedayuproject.com/asset/images/fasilitas/fasilitas-8.jpg" alt="Apartment" style="width:100%; height:100%;"></a>
-	        </div>
-	        <div class="swiper-slide">
-	            <a href="#/app/apart_features/1"><img src="http://agungsedayuproject.com/asset/images/fasilitas/fasilitas-2.jpg" alt="Apartment" style="width:100%; height:100%;"></a>
-	        </div>
-	        <div class="swiper-slide">
-	            <a href="#/app/apart_features/1"><img src="http://agungsedayuproject.com/asset/images/fasilitas/fasilitas-3.jpg" alt="Apartment" style="width:100%; height:100%;"></a>
-	        </div>
-	        <div class="swiper-slide">
-	            <a href="#/app/apart_features/1"><img src="http://agungsedayuproject.com/asset/images/fasilitas/fasilitas-4.jpg" alt="Apartment" style="width:100%; height:100%;"></a>
-	        </div>
-	        <div class="swiper-slide">
-	            <a href="#/app/apart_features/1"><img src="http://agungsedayuproject.com/asset/images/fasilitas/fasilitas-5.jpg" alt="Apartment" style="width:100%; height:100%;"></a>
-	        </div>
+			<div class="swiper-slide" ng-repeat="row_gallery in data.list" style="box-shadow: 10px 10px 5px #888888;">
+		        <a href="javascript:;"><img src="{{ upload_url + row_gallery.images }}" alt="{{ row_gallery.name }}" style="width:100%; height:100%;"></a>
+		    </div>
 		</div>
 
 	    <!-- Add Pagination -->
@@ -26,60 +17,30 @@
 	</div>
 
 	<div class="content list_apartment">
-		<div class="item-apart">
-			<div class="background"><img src="https://thamrinresidence.files.wordpress.com/2008/09/thamrin-residence.jpg"></div>
+		<div class="item-apart" ng-repeat="row in data.list">
+			<div class="background"><img src="{{ upload_url + row.images }}"></div>
 			<div class="description">
-				<span class="name">Thamrin City</span>
-				<a href="#/app/apartment_details/1" class="btn btn-info btn-sm pull-right">Read more</a>
-			</div>
-		</div>
-
-		<div class="item-apart">
-			<div class="background"><img src="https://thamrinresidence.files.wordpress.com/2008/09/thamrin-residence.jpg"></div>
-			<div class="description">
-				<span class="name">Thamrin City</span>
-				<a href="#/app/apartment_details/1" class="btn btn-info btn-sm pull-right">Read more</a>
-			</div>
-		</div>
-
-		<div class="item-apart">
-			<div class="background"><img src="https://thamrinresidence.files.wordpress.com/2008/09/thamrin-residence.jpg"></div>
-			<div class="description">
-				<span class="name">Thamrin City</span>
-				<a href="#/app/apartment_details/1" class="btn btn-info btn-sm pull-right">Read more</a>
-			</div>
-		</div>
-
-		<div class="item-apart">
-			<div class="background"><img src="https://thamrinresidence.files.wordpress.com/2008/09/thamrin-residence.jpg"></div>
-			<div class="description">
-				<span class="name">Thamrin City</span>
-				<a href="#/app/apartment_details/1" class="btn btn-info btn-sm pull-right">Read more</a>
-			</div>
-		</div>
-
-		<div class="item-apart">
-			<div class="background"><img src="https://thamrinresidence.files.wordpress.com/2008/09/thamrin-residence.jpg"></div>
-			<div class="description">
-				<span class="name">Thamrin City</span>
-				<a href="#/app/apartment_details/1" class="btn btn-info btn-sm pull-right">Read more</a>
+				<span class="name">{{ row.name }}</span>
+				<a href="#/app/class_communities_details/{{ row.id }}" class="btn btn-info btn-sm pull-right">Details</a>
 			</div>
 		</div>
 	</div>
+
 </ion-content>
 
 
 <script>
 $(document).ready(function(){
-    var swiper = new Swiper('.swiper-container', {
-        nextButton: '.swiper-button-next',
-        prevButton: '.swiper-button-prev',
-        pagination: '.swiper-pagination',
-        paginationClickable: true,
-        // Disable preloading of all images
-        preloadImages: false,
-        // Enable lazy loading
-        lazyLoading: true
-    });
+	setTimeout(function(){
+	    var swiper = new Swiper('.swiper-container', {
+	        nextButton: '.swiper-button-next',
+	        prevButton: '.swiper-button-prev',
+	        pagination: '.swiper-pagination',
+	        paginationClickable: true,
+	        preloadImages: true,
+	        lazyLoading: true
+	    });
+	    $('.overlay-gallery').fadeOut('slow');
+	}, 5000);
 })
 </script>

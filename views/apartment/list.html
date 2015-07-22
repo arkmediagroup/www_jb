@@ -1,10 +1,10 @@
 <ion-content>
 	<div class="content list_apartment">
-		<div class="item-apart" ng-repeat="row in apartlist">
-			<div class="background"><img src="{{ path_upload + row.apart_image_url }}"></div>
+		<div class="item-apart" ng-repeat="row in data.list">
+			<div class="background"><img src="{{ upload_url + 'apartment/' + row.images }}"></div>
 			<div class="description">
-				<span class="name">{{ row.apart_name }}</span>
-				<a href="#/app/apartment_details/{{ row.apart_id }}" class="btn btn-info btn-sm pull-right">Details</a>
+				<span class="name">{{ row.name }}</span>
+				<a href="#/app/apartment_details/{{ row.id }}" class="btn btn-info btn-sm pull-right">Details</a>
 			</div>
 		</div>
 	</div>

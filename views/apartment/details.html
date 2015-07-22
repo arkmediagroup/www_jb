@@ -1,21 +1,12 @@
 <ion-content>
 	<div class="swiper-container" style="height:250px">
+		<div class="overlay-gallery" style="height:250px; line-height:250px; background-color:#f9f9f9; text-align:center; font-family:Calibri; font-size:12px; font-weight:bold;">
+			Loading...
+		</div>
 	    <div class="swiper-wrapper">
-			<div class="swiper-slide">
-	            <a href="#/app/apart_features/1"><img src="http://agungsedayuproject.com/asset/images/fasilitas/fasilitas-8.jpg" alt="Apartment" style="width:100%; height:100%;"></a>
-	        </div>
-	        <div class="swiper-slide">
-	            <a href="#/app/apart_features/1"><img src="http://agungsedayuproject.com/asset/images/fasilitas/fasilitas-2.jpg" alt="Apartment" style="width:100%; height:100%;"></a>
-	        </div>
-	        <div class="swiper-slide">
-	            <a href="#/app/apart_features/1"><img src="http://agungsedayuproject.com/asset/images/fasilitas/fasilitas-3.jpg" alt="Apartment" style="width:100%; height:100%;"></a>
-	        </div>
-	        <div class="swiper-slide">
-	            <a href="#/app/apart_features/1"><img src="http://agungsedayuproject.com/asset/images/fasilitas/fasilitas-4.jpg" alt="Apartment" style="width:100%; height:100%;"></a>
-	        </div>
-	        <div class="swiper-slide">
-	            <a href="#/app/apart_features/1"><img src="http://agungsedayuproject.com/asset/images/fasilitas/fasilitas-5.jpg" alt="Apartment" style="width:100%; height:100%;"></a>
-	        </div>
+			<div class="swiper-slide" ng-repeat="row_gallery in data.gallery">
+		        <a href="javascript:;"><img src="{{ upload_url + row_gallery.images }}" alt="{{ row_gallery.name }}" style="width:100%; height:100%;"></a>
+		    </div>
 		</div>
 
 	    <!-- Add Pagination -->
@@ -27,11 +18,7 @@
 
 	<div class="content details_apartment">
 		<div class="list-group">
-		  <a class="list-group-item" href="#/app/apartment_highlight/{{ row.apart_id }}">Highlight <span class=" glyphicon glyphicon-menu-right pull-right" aria-hidden="true"></span></a>
-		  <a class="list-group-item" href="#/app/apartment_gallery/{{ row.apart_id }}">Gallery <span class=" glyphicon glyphicon-menu-right pull-right" aria-hidden="true"></span></a>
-		  <a class="list-group-item" href="#/app/apartment_info/{{ row.apart_id }}">Another Info <span class="glyphicon glyphicon-menu-right pull-right" aria-hidden="true"></span></a>
-		  <a class="list-group-item" href="#/app/apartment_available/{{ row.apart_id }}">Less Available <span class="glyphicon glyphicon-menu-right pull-right" aria-hidden="true"></span></a>
-		  <a class="list-group-item" href="#/app/apartment_news/{{ row.apart_id }}">News <span class="glyphicon glyphicon-menu-right pull-right" aria-hidden="true"></span></a>
+		  <a class="list-group-item" ng-repeat="row_category in data.category" href="#/app/apartment_category_{{ row_category.id }}/{{ data.data.id }}/0">{{ row_category.name }} <span class=" glyphicon glyphicon-menu-right pull-right" aria-hidden="true"></span></a>
 		</div>
 	</div>
 </ion-content>
@@ -39,15 +26,16 @@
 
 <script>
 $(document).ready(function(){
-    var swiper = new Swiper('.swiper-container', {
-        nextButton: '.swiper-button-next',
-        prevButton: '.swiper-button-prev',
-        pagination: '.swiper-pagination',
-        paginationClickable: true,
-        // Disable preloading of all images
-        preloadImages: false,
-        // Enable lazy loading
-        lazyLoading: true
-    });
+	setTimeout(function(){
+	    var swiper = new Swiper('.swiper-container', {
+	        nextButton: '.swiper-button-next',
+	        prevButton: '.swiper-button-prev',
+	        pagination: '.swiper-pagination',
+	        paginationClickable: true,
+	        preloadImages: true,
+	        lazyLoading: true
+	    });
+	    $('.overlay-gallery').fadeOut('slow');
+	}, 5000);
 })
 </script>

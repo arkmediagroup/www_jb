@@ -93,9 +93,9 @@ angular.module('starter', ['ionic','starter.controllers','ionic.service.core', '
     }
   })
 
-  .state('app.apartment_highlight', {
+  .state('app.apartment_category_1', {
     cache: false,
-    url: "/apartment_highlight/:apartment_id",
+    url: "/apartment_category_1/:apartment_id/:level",
     views: {
       'page_content': {
         templateUrl: "views/apartment/highlight.html",
@@ -104,9 +104,9 @@ angular.module('starter', ['ionic','starter.controllers','ionic.service.core', '
     }
   })
 
-  .state('app.apartment_gallery', {
+  .state('app.apartment_category_2', {
     cache: false,
-    url: "/apartment_gallery/:apartment_id",
+    url: "/apartment_category_2/:apartment_id/:level",
     views: {
       'page_content': {
         templateUrl: "views/apartment/gallery.html",
@@ -114,21 +114,41 @@ angular.module('starter', ['ionic','starter.controllers','ionic.service.core', '
       }
     }
   })
-  //Class =>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
-  .state('app.class', {
+  .state('app.apartment_category_3', {
     cache: false,
-    url: "/class",
+    url: "/apartment_category_3/:apartment_id/:level",
     views: {
       'page_content': {
-        templateUrl: "views/class/list.html",
-        controller: 'class_ctrl'
+        templateUrl: "views/apartment/info.html",
+        controller: 'apartment_info_ctrl'
       }
     }
   })
 
-  //Events =>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+  //Class Communities
+  .state('app.class_communities', {
+    cache: false,
+    url: "/class_communities",
+    views: {
+      'page_content': {
+        templateUrl: "views/class/list.html",
+        controller: 'class_communities_ctrl'
+      }
+    }
+  })
+  .state('app.class_communities_details', {
+    cache: false,
+    url: "/class_communities_details/:class_id",
+    views: {
+      'page_content': {
+        templateUrl: "views/class/details.html",
+        controller: 'class_communities_details_ctrl'
+      }
+    }
+  })
 
+  //Class Communities
   .state('app.events', {
     cache: false,
     url: "/events",
@@ -139,7 +159,16 @@ angular.module('starter', ['ionic','starter.controllers','ionic.service.core', '
       }
     }
   })
-
+  .state('app.events_details', {
+    cache: false,
+    url: "/events_details/:events_id",
+    views: {
+      'page_content': {
+        templateUrl: "views/events/details.html",
+        controller: 'events_details_ctrl'
+      }
+    }
+  })
 
   $urlRouterProvider.otherwise('/app/about_us');
 });
