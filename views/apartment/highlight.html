@@ -1,21 +1,61 @@
 <ion-content>
 	<div class="content highlight" ng-if="data.level == 0">
 		<div ng-repeat="items in data.items">
-			<div class="panel panel-info">
-				<div class="panel-heading">
-					<h4 class="panel-title">{{ items.main }}</h4>
+			<div ng-if="items.menu_type == 'header_menu'">
+				<div class="panel panel-info">
+					<div class="panel-heading">
+						<h4 class="panel-title">{{ items.name }}</h4>
+					</div>
+				</div>
+				<div class="list-group">
+					<div ng-repeat="sub in items.sub">
+				  	<a class="list-group-item" href="#/app/apartment_category_{{ data.category.id }}/{{ data.data.id }}/{{ sub.id }}" ng-if="sub.menu_type == 'details'">{{ sub.name}} <span class=" glyphicon glyphicon-menu-right pull-right" aria-hidden="true"></span></a>
+
+				  	<li class="list-group-item" ng-if="sub.menu_type == 'text'">{{ sub.name }}</li>
+				  </div>
 				</div>
 			</div>
-			<div class="list-group list-highlight">
-			  <a class="list-group-item" ng-repeat="sub in items.sub" href="#/app/apartment_category_{{ data.category.id }}/{{ data.data.id }}/{{ sub.id }}">{{ sub.name}} <span class=" glyphicon glyphicon-menu-right pull-right" aria-hidden="true"></span></a>
+			<div ng-if="items.menu_type == 'details'">
+				<div class="list-group">
+				  <a class="list-group-item" href="#/app/apartment_category_{{ data.category.id }}/{{ data.data.id }}/{{ items.id }}">{{ items.name }} <span class=" glyphicon glyphicon-menu-right pull-right" aria-hidden="true"></span></a>
+				</div>
+			</div>
+			<div ng-if="items.menu_type == 'text'">
+				<div class="list-group">
+				  <li class="list-group-item">{{ items.name }}</li>
+				</div>
 			</div>
 		</div>
 	</div>
 
 	<div class="content highlight" ng-if="data.level > 0">
-		<div class="panel panel-info">
-			<div class="list-group list-highlight">
-			  <a class="list-group-item" ng-repeat="sub in data.items" href="#/app/apartment_category_{{ data.category.id }}/{{ data.data.id }}/{{ sub.id }}">{{ sub.name}} <span class=" glyphicon glyphicon-menu-right pull-right" aria-hidden="true"></span></a>
+		<div ng-repeat="items in data.items">
+			<div ng-if="items.menu_type == 'header_menu'">
+				<div class="panel panel-info">
+					<div class="panel-heading">
+						<h4 class="panel-title">{{ items.name }}</h4>
+					</div>
+				</div>
+				<div class="list-group">
+				  <a class="list-group-item" ng-repeat="sub in items.sub" href="#/app/apartment_category_{{ data.category.id }}/{{ data.data.id }}/{{ sub.id }}">{{ sub.name}} <span class=" glyphicon glyphicon-menu-right pull-right" aria-hidden="true"></span></a>
+				</div>
+			</div>
+			<div ng-if="items.menu_type == 'details'">
+				<div class="list-group">
+				  <a class="list-group-item" href="#/app/apartment_category_{{ data.category.id }}/{{ data.data.id }}/{{ items.id }}">{{ items.name }} <span class=" glyphicon glyphicon-menu-right pull-right" aria-hidden="true"></span></a>
+				</div>
+			</div>
+			<div ng-if="items.menu_type == 'text'">
+				<div class="list-group">
+				  <li class="list-group-item">{{ items.name }}</li>
+				</div>
+			</div>
+		</div>
+
+		<div ng-if="data.items.menu_type == 'details'">
+			<img src="{{ upload_url + data.items.images }}" alt="{{ data.items.name }}" style="width:100%; max-height:250px;">
+			<div class="content">
+				{{ data.items.description }}
 			</div>
 		</div>
 	</div>

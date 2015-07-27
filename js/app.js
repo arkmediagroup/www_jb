@@ -170,5 +170,5 @@ angular.module('starter', ['ionic','starter.controllers','ionic.service.core', '
     }
   })
 
-  $urlRouterProvider.otherwise('/app/about_us');
+  $urlRouterProvider.otherwise('/app/apartment');
 });

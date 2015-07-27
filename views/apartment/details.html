@@ -16,10 +16,12 @@
 	    <div class="swiper-button-prev"></div>
 	</div>
 
-	<div class="content details_apartment">
-		<div class="list-group">
-		  <a class="list-group-item" ng-repeat="row_category in data.category" href="#/app/apartment_category_{{ row_category.id }}/{{ data.data.id }}/0">{{ row_category.name }} <span class=" glyphicon glyphicon-menu-right pull-right" aria-hidden="true"></span></a>
-		</div>
+	<div class="content" style="text-align:center">
+		"{{ data.data.address }}"
+	</div>
+
+	<div class="list-group">
+	  <a class="list-group-item" ng-repeat="row_category in data.category" href="#/app/apartment_category_{{ row_category.id }}/{{ data.data.id }}/0">{{ row_category.name }} <span class=" glyphicon glyphicon-menu-right pull-right" aria-hidden="true"></span></a>
 	</div>
 </ion-content>
 

@@ -58,25 +58,57 @@ body {
 	max-height: 320px;
 }
 
-.list_apartment {}
-.list_apartment .item-apart {
-	height: 250px;
-	margin-bottom: 10px;
-	border-bottom:1px dotted #ccc;
-}
-.list_apartment .item-apart .background img {
+.list_apartment {
+	position: absolute;
+	height: 100%;
 	width: 100%;
-	height: 200px;
-}
-.list_apartment .item-apart .description {
-	padding:10px 2px;
-	height: 25px;
-	line-height: 25px;
-}
-.list_apartment .item-apart .description span {
-	font-weight: bold;
+	z-index: 1;
+	top: 0px;
+	left: 0px;
+	background-color: #CEE3F6;
 }
 
+.list_apartment .item-apart.active .item-apart-overlay{
+	opacity: 0.2;
+	line-height: 350px;
+}
+.list_apartment .item-apart.active .apart-info {
+	line-height: 350px;	
+}
+.list_apartment .item-apart {
+	height: 150px;
+	position: relative;
+}
+.list_apartment .item-apart img {
+	width: 100%;
+	height: 100%;
+}
+.list_apartment .item-apart .item-apart-overlay {
+	background-color: #000000;
+	position: absolute;
+	z-index: 100;
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	left: 0px;
+	opacity: 0.8;
+}
+.list_apartment .item-apart .item-apart-overlay:hover {
+	opacity: 0.2;
+}
+.list_apartment .item-apart .apart-info {
+	position: absolute;
+	z-index: 110;
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	left: 0px;
+	font-size: 22px;
+	color: #ffffff;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 150px;
+}
 .details_apartment {}
 
 .panel-title {font-size: 14px;}

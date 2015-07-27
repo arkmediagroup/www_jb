@@ -1,5 +1,5 @@
-var site_url = 'http://bj.1000unit.com/';
-//var site_url = 'http://localhost/balconies-jakarta/';
+//var site_url = 'http://bj.1000unit.com/';
+var site_url = 'http://localhost/balconies-jakarta/';
 var upload_url = site_url + 'asset/upload/';
 
 angular.module('starter.controllers', ['ngOpenFB','ngSanitize'])
@@ -96,6 +96,27 @@ angular.module('starter.controllers', ['ngOpenFB','ngSanitize'])
 	.success(function(data){
 		$scope.data = data;
 	})
+
+	$scope.priview_apartment_up = function(){
+		var index = $('div.item-apart.active').index();
+		if(index == '-1') {
+			$('div.item-apart:first-child').animate({height:'350px'},200).addClass('active').scrollTo();
+		} else {
+			var next_index = parseInt(index) + 1;
+			$('div.item-apart').animate({height:'150px'},100).removeClass('active');
+			$('div.item-apart').eq(next_index).animate({height:'350px'},200).addClass('active').scrollTo();
+		}
+		console.log('Swipe Up');
+	}
+
+	$scope.priview_apartment_down = function(){
+		var index = $('div.item-apart.active').index();
+		var next_index = parseInt(index) - 1;
+		$('div.item-apart').animate({height:'150px'},100).removeClass('active');
+		$('div.item-apart').eq(next_index).animate({height:'350px'},200).addClass('active').scrollTo();
+		console.log('Swipe Down');
+	}
+
 })
 
 
@@ -105,6 +126,7 @@ angular.module('starter.controllers', ['ngOpenFB','ngSanitize'])
 	$('a.back-button').attr('href','#/app/apartment').show();
 	$http.get(site_url + 'api/apartment/details?id=' + $stateParams.apartment_id)
 	.success(function(data){
+		console.log(data);
 		$scope.data = data;
 		$('p.title_page').html(data.data.name);
 	})
@@ -115,6 +137,7 @@ angular.module('starter.controllers', ['ngOpenFB','ngSanitize'])
 	$http.get(site_url + 'api/apartment/category?id=' + $stateParams.apartment_id + '&category_id=1&level=' + $stateParams.level)
 	.success(function(data){
 		$scope.data = data;
+		console.log(data);
 		$('p.title_page').html('Highlight - ' + data.data.name);
 
 		if($stateParams.level == 0) {
@@ -129,6 +152,7 @@ angular.module('starter.controllers', ['ngOpenFB','ngSanitize'])
 
 	$http.get(site_url + 'api/apartment/category?id=' + $stateParams.apartment_id + '&category_id=2&level=' + $stateParams.level)
 	.success(function(data){
+		console.log(data);
 		$scope.data = data;
 		$('p.title_page').html('Gallery - ' + data.data.name);
 

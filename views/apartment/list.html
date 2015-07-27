@@ -1,11 +1,12 @@
+<!--  on-swipe-up="priview_apartment_up()" on-swipe-down="priview_apartment_down()" -->
 <ion-content>
-	<div class="content list_apartment">
-		<div class="item-apart" ng-repeat="row in data.list">
-			<div class="background"><img src="{{ upload_url + 'apartment/' + row.images }}"></div>
-			<div class="description">
-				<span class="name">{{ row.name }}</span>
-				<a href="#/app/apartment_details/{{ row.id }}" class="btn btn-info btn-sm pull-right">Details</a>
-			</div>
+	<div class="list_apartment">
+		<div class="item-apart" ng-repeat="row in data.list" id="{{ row.id }}" ng-href="#/app/apartment_details/{{ row.id }}">
+			<a href="#/app/apartment_details/{{ row.id }}">
+				<img src="{{ upload_url + 'apartment/' + row.images }}">
+				<div class="item-apart-overlay"></div>
+				<div class="apart-info" ng-href="#/app/apartment_details/{{ row.id }}">{{ row.name }}</div>
+			</a>
 		</div>
 	</div>
 </ion-content>
