@@ -116,3 +116,52 @@
         width: 0;
     }
 }
+
+
+
+.collapse {
+    position: fixed;
+    top:43px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+.collapse .collapse-overlay {
+    position: absolute;
+    top:0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    background-color: #000000;
+    opacity: 0.8;
+}
+
+.collapse ul {
+    position: absolute;
+    z-index: 9999;
+    top: 50%;
+    left: 50%;
+    margin-top:-50%;
+    margin-left: -25%;
+}
+
+.collapse ul li{
+    height: 40px;
+    line-height: 40px;
+}
+.collapse ul li:hover {
+    background: none;
+}
+.collapse ul li a:hover, .collapse ul li a:active,.collapse ul li a:focus {
+    background: none;
+    color: #cccccc;
+}
+.collapse ul li a{
+    line-height: 40px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffff;
+}

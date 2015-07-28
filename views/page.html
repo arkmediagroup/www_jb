@@ -4,7 +4,7 @@
   <button type="button" class="btn" id="menu-toggle"></button>
 </div>
 
-<!-- Sidebar -->
+<!-- Sidebar 
 <div id="sidebar-wrapper">
     <ul class="sidebar-nav">
         <li><a href="#/app/about_us" class="close-menu">About Us</a></li>
@@ -12,7 +12,18 @@
         <li><a href="#/app/class_communities" class="close-menu">Class</a></li>
         <li><a href="#/app/events" class="close-menu">Upcommig Events</a></li>
     </ul>
-</div>
+</div>-->
+
+<!-- Collect the nav links, forms, and other content for toggling -->
+<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+  <div class="collapse-overlay"></div>
+  <ul class="nav navbar-nav navbar-right main-nav blur">
+      <li><a href="#/app/about_us" class="close-menu">About Us</a></li>
+      <li><a href="#/app/apartment" class="close-menu">Apartment List</a></li>
+      <li><a href="#/app/class_communities" class="close-menu">Class</a></li>
+      <li><a href="#/app/events" class="close-menu">Upcommig Events</a></li>
+  </ul>
+</div><!-- /.navbar-collapse -->
 
 <div id="page-content-wrapper">
   <ion-nav-view name="page_content"></ion-nav-view>
@@ -31,15 +42,11 @@ $(document).ready(function(){
   $('img').imgPreload();
 
   $("#menu-toggle").click(function(e) {
-      e.preventDefault();
-      $("#wrapper").toggleClass("toggled");
+    $('.collapse').slideToggle();
+    $(this).toggleClass('active');
   });
-  /*$("#page-content-wrapper").click(function(e) {
-      e.preventDefault();
-      $("#wrapper").removeClass("toggled");
-  });*/
   $('.close-menu').click(function(e) {
-      $("#wrapper").removeClass("toggled");
+    $("#menu-toggle").click();
   });
 })
 </script>

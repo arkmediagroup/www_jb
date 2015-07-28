@@ -46,6 +46,15 @@ body {
 	float: right;
 	margin-top:7px; 
 }
+.header-bar button.active {
+	border-radius: 0px;
+	width: 35px;
+	height: 32px;
+	background: url('../img/close.png');
+	background-size: 100% 100%;
+	float: right;
+	margin-top:7px; 
+}
 
 .content {
 	text-align: justify;
@@ -78,6 +87,7 @@ body {
 .list_apartment .item-apart {
 	height: 150px;
 	position: relative;
+	margin-bottom: 10px;
 }
 .list_apartment .item-apart img {
 	width: 100%;
@@ -91,7 +101,10 @@ body {
 	height: 100%;
 	top: 0px;
 	left: 0px;
-	opacity: 0.8;
+	opacity: 0.2;
+	-webkit-box-shadow: 2px 7px 5px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 2px 7px 5px 0px rgba(0,0,0,0.75);
+	box-shadow: 2px 7px 5px 0px rgba(0,0,0,0.75);
 }
 .list_apartment .item-apart .item-apart-overlay:hover {
 	opacity: 0.2;
@@ -140,4 +153,14 @@ body {
 .item-select-apartment {
 	font-size: 12px;
 	line-height: 30px;
+}
+.page-content-wrapper {
+	position: absolute;
+	top: 40px;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	margin: auto;
+	height: 100%;
+	width: 100%;
 }

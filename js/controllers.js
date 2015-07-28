@@ -1,5 +1,5 @@
-//var site_url = 'http://bj.1000unit.com/';
-var site_url = 'http://localhost/balconies-jakarta/';
+var site_url = 'http://bj.1000unit.com/';
+//var site_url = 'http://localhost/balconies-jakarta/';
 var upload_url = site_url + 'asset/upload/';
 
 angular.module('starter.controllers', ['ngOpenFB','ngSanitize'])
